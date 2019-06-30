@@ -26,16 +26,10 @@ class Palette extends Component {
         background={color[format]}
         name={color.name}
         key={color.id}
-        // id={color.id}
-        // paletteId={id}
         moreUrl={`/palette/${id}/${color.id}`}
+        showLink={true}
       />
     ));
-
-    //Or this with {} and return()
-    // const colorBoxes = this.props.palette.colors.map(color => {
-    //   return <ColorBox background={color.hex} name={color.name} />;
-    // });
 
     return (
       <div className="Palette">
