@@ -19,11 +19,6 @@ class App extends Component {
     });
   };
 
-  // savePalette = newPalette => {
-  //   console(newPalette);
-  //   // this.setState({ palettes: [...this.state.palettes, newPalette] });
-  // };
-
   savePalette = newPalette => {
     this.setState({ palettes: [...this.state.palettes, newPalette] });
   };
@@ -35,7 +30,11 @@ class App extends Component {
           exact
           path="/palette/new"
           render={routeProps => (
-            <NewPaletteForm savePalette={this.savePalette} {...routeProps} />
+            <NewPaletteForm
+              savePalette={this.savePalette}
+              palettes={this.state.palettes}
+              {...routeProps}
+            />
           )}
         />
         <Route
